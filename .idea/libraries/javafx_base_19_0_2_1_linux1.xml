@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="javafx-base-19.0.2.1-linux1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/lib/jar_files (6)/javafx-base-19.0.2.1-linux.jar!/" />
+      <root url="jar://$USER_HOME$/lib/jar_files (6)/javafx-graphics-19.0.2.1-linux.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
