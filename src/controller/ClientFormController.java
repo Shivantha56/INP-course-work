@@ -4,6 +4,7 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -25,6 +26,11 @@ public class ClientFormController extends Thread {
     public VBox vBox;
     public TextField txtMsg;
     public AnchorPane clientFormContext;
+    public Button btnEmojiClose;
+    public AnchorPane emojiPane;
+    public ImageView imageHeart;
+    public ImageView smleImage;
+    public Button btnEmoji;
 
     BufferedReader reader;
     PrintWriter writer;
@@ -183,4 +189,36 @@ public class ClientFormController extends Thread {
         this.filePath = fileChooser.showOpenDialog(stage);
         writer.println(lblClientName.getText() + " " + "img" + filePath.getPath());
     }
+
+    public void selectEmojiOnAction(ActionEvent actionEvent) {
+
+        emojiPane.setVisible(true);
+        btnEmoji.setVisible(false);
+
+        btnEmojiClose.setVisible(true);
+
+        smleImage.setOnMouseClicked(event -> {
+            txtMsg.setText(txtMsg.getText() + "☺");
+        });
+
+        imageHeart.setOnMouseClicked(mouseEvent -> {
+            txtMsg.setText(txtMsg.getText() + "♥");
+        });
+
+
+
+
+
+
+    }
+
+    public void closeEmojiOnAction(ActionEvent actionEvent) {
+        emojiPane.setVisible(false);
+        btnEmoji.setVisible(true);
+
+        btnEmojiClose.setVisible(false);
+
+    }
+
+
 }
